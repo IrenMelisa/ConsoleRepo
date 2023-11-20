@@ -1,0 +1,13 @@
+C:\EUVIC\Ira\SimpleApp\ConsoleAppNew\ConsoleApp1\ConsoleApp1\bin\Debug\netcoreapp3.1\ConsoleApp1.exe
+C:\EUVIC\Ira\SimpleApp\ConsoleAppNew\ConsoleApp1\ConsoleApp1\bin\Debug\netcoreapp3.1\ConsoleApp1.deps.json
+C:\EUVIC\Ira\SimpleApp\ConsoleAppNew\ConsoleApp1\ConsoleApp1\bin\Debug\netcoreapp3.1\ConsoleApp1.runtimeconfig.json
+C:\EUVIC\Ira\SimpleApp\ConsoleAppNew\ConsoleApp1\ConsoleApp1\bin\Debug\netcoreapp3.1\ConsoleApp1.runtimeconfig.dev.json
+C:\EUVIC\Ira\SimpleApp\ConsoleAppNew\ConsoleApp1\ConsoleApp1\bin\Debug\netcoreapp3.1\ConsoleApp1.dll
+C:\EUVIC\Ira\SimpleApp\ConsoleAppNew\ConsoleApp1\ConsoleApp1\bin\Debug\netcoreapp3.1\ConsoleApp1.pdb
+C:\EUVIC\Ira\SimpleApp\ConsoleAppNew\ConsoleApp1\ConsoleApp1\obj\Debug\netcoreapp3.1\ConsoleApp1.csprojAssemblyReference.cache
+C:\EUVIC\Ira\SimpleApp\ConsoleAppNew\ConsoleApp1\ConsoleApp1\obj\Debug\netcoreapp3.1\ConsoleApp1.AssemblyInfoInputs.cache
+C:\EUVIC\Ira\SimpleApp\ConsoleAppNew\ConsoleApp1\ConsoleApp1\obj\Debug\netcoreapp3.1\ConsoleApp1.AssemblyInfo.cs
+C:\EUVIC\Ira\SimpleApp\ConsoleAppNew\ConsoleApp1\ConsoleApp1\obj\Debug\netcoreapp3.1\ConsoleApp1.csproj.CoreCompileInputs.cache
+C:\EUVIC\Ira\SimpleApp\ConsoleAppNew\ConsoleApp1\ConsoleApp1\obj\Debug\netcoreapp3.1\ConsoleApp1.dll
+C:\EUVIC\Ira\SimpleApp\ConsoleAppNew\ConsoleApp1\ConsoleApp1\obj\Debug\netcoreapp3.1\ConsoleApp1.pdb
+C:\EUVIC\Ira\SimpleApp\ConsoleAppNew\ConsoleApp1\ConsoleApp1\obj\Debug\netcoreapp3.1\ConsoleApp1.genruntimeconfig.cache
