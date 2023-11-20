@@ -23,7 +23,7 @@ jobs:
       run: dotnet --version
     - name: Build 
       run: dotnet build '.\ConsoleAppNew\ConsoleApp1\ConsoleApp1.sln'
-    - name: Build
+    - name: PS script
       shell: pwsh
       run: |
-        whoami
+        mkdir '1'
