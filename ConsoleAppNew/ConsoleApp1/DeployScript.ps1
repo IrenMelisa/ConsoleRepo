@@ -16,7 +16,7 @@ Write-Host "envs: $env:GITHUB_WORKSPACE"
 	
 # Install application
 #  Start-Process -FilePath "msiexec" -ArgumentList "/i ""$msiPath"" /passive /log ""$logFileName"" INSTALLDIR=""${env:ProgramFiles(x86)}\$applicationName\1.0""" -Wait -Passthru | Out-Null
-Invoke-Command -ComputerName 198.18.100.5 -ScriptBlock { 
+Invoke-Command -ComputerName "dea059yw.eito-dublin.local" -ScriptBlock { 
     Start-Process -FilePath "msiexec" -ArgumentList "/i ""$msiPath"" /passive /log ""$logFileName"" INSTALLDIR=""${env:ProgramFiles(x86)}\$applicationName\1.0""" -Wait -Passthru | Out-Null
 }
 Write-Host "OUT"
