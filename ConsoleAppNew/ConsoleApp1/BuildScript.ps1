@@ -5,7 +5,7 @@ $ApplicationStartDate = Get-Date
 $configuration = "Debug"
 $applicationLog = "c:\logTMP"
 
-echo $env:GITHUB_WORKSPACE
+
         Write-Host "Building $application" -ForegroundColor Cyan
 
 	$exitCode = (Start-Process `
