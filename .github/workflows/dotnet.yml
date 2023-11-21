@@ -29,4 +29,5 @@ jobs:
         echo $env:GITHUB_WORKSPACE
     - name: PS script
       run: |
-        '.\ConsoleAppNew\ConsoleApp1\TestScript.ps1'
+        $GITHUB_ACTION\ConsoleAppNew\ConsoleApp1\TestScript.ps1
+      shell: bash
