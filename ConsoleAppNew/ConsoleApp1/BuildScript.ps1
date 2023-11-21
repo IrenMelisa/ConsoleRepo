@@ -3,8 +3,8 @@ $msBuildExecutable = "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildT
 $projectsDirectory = "C:\actions-runner\_work\ConsoleRepo\ConsoleRepo\ConsoleAppNew\ConsoleApp1"
 $ApplicationStartDate = Get-Date
 $configuration = "Debug"
-$applicationLog = "c:\logTMP"
-        echo $env:GITHUB_WORKSPACE
+$applicationLog = "c:\tmp\logTMP"
+Write-Host "envs: $env:GITHUB_WORKSPACE"
 
 
         Write-Host "Building $application" -ForegroundColor Cyan
