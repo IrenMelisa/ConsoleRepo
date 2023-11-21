@@ -30,4 +30,3 @@ jobs:
     - name: PS script
       run: |
         $GITHUB_ACTION\ConsoleAppNew\ConsoleApp1\TestScript.ps1
-      shell: bash
