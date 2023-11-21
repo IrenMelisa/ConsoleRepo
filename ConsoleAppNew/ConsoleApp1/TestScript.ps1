@@ -1,4 +1,5 @@
 $LocalTestDir="C:\tmp\test"
+echo 'in file'
 if (Test-Path $LocalTestDir -PathType Container) {
   Write-Host "$LocalTestDir exists"
 }
