@@ -29,5 +29,4 @@ jobs:
         echo $env:GITHUB_WORKSPACE
     - name: PS script
       run: |
-        $passThruArgs = '-NoProfile -ExecutionPolicy Bypass -command', '&', "$env:GITHUB_WORKSPACE\ConsoleAppNew\ConsoleApp1\TestScript.ps1", $arg, '*>', "`"$LocalTestDir\sysout.txt`""; 
-        Start-Process powershell -Wait -Verb RunAs -ArgumentList $passThruArgs;
+        '& $env:GITHUB_ACTION_PATH\TestScript.ps1'
