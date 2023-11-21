@@ -6,10 +6,10 @@ $configuration = "Debug"
 
         Write-Host "Building $application" -ForegroundColor Cyan
 
-	$exitCode = (Start-Process 
-		-FilePath $msBuildExecutable 
-		-ArgumentList """$projectsDirectory\$application.sln"" $target /p:Configuration=$configuration /p:VisualStudioVersion=12.0 /fl /flp:logfile=$application.log;verbosity=normal" 
-		-PassThru -Wait 
+	$exitCode = (Start-Process `
+		-FilePath $msBuildExecutable `
+		-ArgumentList """$projectsDirectory\$application.sln"" $target /p:Configuration=$configuration /p:VisualStudioVersion=12.0 /fl /flp:logfile=$application.log;verbosity=normal" `
+		-PassThru -Wait `
 	).ExitCode
 
 	# Check result
