@@ -23,6 +23,9 @@ jobs:
       run: dotnet --version
     - name: Build 
       run: dotnet build '.\ConsoleAppNew\ConsoleApp1\ConsoleApp1.sln'
+    - name: Build via PS
+      run: |
+        .\ConsoleAppNew\ConsoleApp1\BuildScript.ps1
     - name: PS script whoami
       run: |
         whoami
