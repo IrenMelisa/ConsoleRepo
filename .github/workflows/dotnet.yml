@@ -24,6 +24,5 @@ jobs:
     - name: Build 
       run: dotnet build '.\ConsoleAppNew\ConsoleApp1\ConsoleApp1.sln'
     - name: PS script
-      shell: pwsh
       run: |
-        mkdir '1'
+        whoami
