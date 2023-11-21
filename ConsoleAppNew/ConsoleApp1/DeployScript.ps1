@@ -4,8 +4,7 @@ $ApplicationStartDate = Get-Date
 $configuration = "Debug"
 $applicationLog = "logTMP"
     $msiFolder = "$env:GITHUB_WORKSPACE\ConsoleAppNew\ConsoleApp1\MSI"
-$maximumRetries = 1
-$programFilesDirectory = "C:\Program Files (x86)"
+#$programFilesDirectory = "C:\Program Files (x86)"
 
     # Set log name
     $logFileName = "$msiFolder\$applicationName.log"
@@ -16,10 +15,5 @@ $programFilesDirectory = "C:\Program Files (x86)"
 Write-Host "envs: $env:GITHUB_WORKSPACE"
 	
 # Install application
-  Start-Process -FilePath "msiexec" -ArgumentList "/i ""$msiPath"" /passive /log ""$logFileName"" INSTALLDIR=""$programFilesDirectory\$applicationName\1.0""" -Wait -Passthru | Out-Null
+  Start-Process -FilePath "msiexec" -ArgumentList "/i ""$msiPath"" /passive /log ""$logFileName"" INSTALLDIR="\\198.18.100.5\"${env:ProgramFiles(x86)}\$applicationName\1.0""" -Wait -Passthru | Out-Null
 Write-Host "OUT"
-
-Write-Host "envs: $env:GITHUB_WORKSPACE"
-	
-# Install application
-Start-Process -FilePath "msiexec" -ArgumentList "/i ""$msiPath"" /passive /log ""$logFileName"" INSTALLDIR=""$programFilesDirectory\$applicationName\1.0""" -Wait -Passthru | Out-Null
