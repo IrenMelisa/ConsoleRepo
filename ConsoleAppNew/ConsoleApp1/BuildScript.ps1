@@ -4,6 +4,7 @@ $projectsDirectory = "C:\actions-runner\_work\ConsoleRepo\ConsoleRepo\ConsoleApp
 $ApplicationStartDate = Get-Date
 $configuration = "Debug"
 $applicationLog = "c:\logTMP"
+
 echo $env:GITHUB_WORKSPACE
         Write-Host "Building $application" -ForegroundColor Cyan
 
