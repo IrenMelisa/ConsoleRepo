@@ -26,9 +26,9 @@ jobs:
       run: |
            ping 198.18.100.5
 #           ${env:ProgramFiles(x86)}
- #   - name: Deploy via PS
- #     run: |
- #       .\ConsoleAppNew\ConsoleApp1\DeployScript.ps1
+    - name: Deploy via PS
+      run: |
+        .\ConsoleAppNew\ConsoleApp1\DeployScript.ps1
     - name: PS script whoami
       run: |
         whoami
