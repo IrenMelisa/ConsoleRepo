@@ -10,7 +10,7 @@ Write-Host "envs: $env:GITHUB_WORKSPACE"
         Write-Host "Building $application" -ForegroundColor Cyan
 
 	$exitCode = (Start-Process `
-		-FilePath $msBuildExecutable `
+		-FilePath msbuild `
 		-ArgumentList """$projectsDirectory\$application.sln"" $target /p:Configuration=$configuration /p:VisualStudioVersion=12.0 /fl /flp:logfile=$applicationLog.log;verbosity=normal" `
 		-PassThru -Wait `
 	).ExitCode
