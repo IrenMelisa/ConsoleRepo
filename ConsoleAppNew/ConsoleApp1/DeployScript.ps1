@@ -6,6 +6,7 @@ $configuration = "Debug"
 $applicationLog = "logTMP"
     $msiFolder = "$env:GITHUB_WORKSPACE\ConsoleAppNew\MSI"
 $maximumRetries = 1
+$programFilesDirectory = "C:\Program Files (x86)"
 
     # Set log name
     $logFileName = "$msiFolder\$applicationName.log"
@@ -15,9 +16,6 @@ $maximumRetries = 1
 
 Write-Host "envs: $env:GITHUB_WORKSPACE"
 	
-	# Do retries
-	while($retries -lt $maximumRetries -and ((Test-Path $logFileName) -ne "true" -or (Select-String -Path $logFileName -Pattern "success or error status: 0" -Quiet) -ne "true"))
-	{
-		# Install application
-		Start-Process -FilePath "msiexec" -ArgumentList "/i ""$msiPath"" /passive /log ""$logFileName"" INSTALLDIR=""$programFilesDirectory\$applicationName for BizTalk\1.0""" -Wait -Passthru | Out-Null
-        }
+# Install application
+  Start-Process -FilePath "msiexec" -ArgumentList "/i ""$msiPath"" /passive /log ""$logFileName"" INSTALLDIR=""$programFilesDirectory\$applicationName\1.0""" -Wait -Passthru | Out-Null
+Write-Host "OUT"
