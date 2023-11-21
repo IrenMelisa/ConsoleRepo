@@ -1,16 +1,23 @@
 $application = "ConsoleApp1"
-$visualStudioDirectory = "c:\Program Files (x86)\Microsoft Visual Studio 11.0"
+$msBuildExecutable = "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\MSBuild\Current\Bin\MSBuild.exe"
 $projectsDirectory = "ConsoleAppNew"
-        Write-Host "Building $application" -ForegroundColor Cyan
-        $exitCode = (Start-Process -FilePath "$visualStudioDirectory\Common7\IDE\devenv.exe" -ArgumentList """$projectsDirectory\$application\$application.sln"" /Build Release /Out $application.log" -PassThru -Wait).ExitCode
+$ApplicationStartDate = Get-Date
+$configuration = "Debug"
 
-        # Check result
-        if($exitCode -eq 0 -and (Select-String -Path "$application.log" -Pattern "0 failed" -Quiet) -eq "true")
-        {
-            Write-Host "$application built succesfully" -ForegroundColor Green
-        }
-        else
-        {
-            Write-Host "$application not built succesfully" -ForegroundColor Red
-            WaitForKeyPress
-        }
+        Write-Host "Building $application" -ForegroundColor Cyan
+
+	$exitCode = (Start-Process `
+		-FilePath $msBuildExecutable 
+		-ArgumentList """$projectsDirectory\$application.sln"" $target /p:Configuration=$configuration /p:VisualStudioVersion=12.0 /fl /flp:logfile=$application.log;verbosity=normal" 
+		-PassThru -Wait 
+	).ExitCode
+
+	# Check result
+	if($exitCode -eq 0)
+	{
+		Write-Host "$application built successfully in $(New-TimeSpan $ApplicationStartDate (Get-Date))" -ForegroundColor Green
+	}
+	else
+	{
+		Write-Host "$application not built successfully" -ForegroundColor Red
+	}
