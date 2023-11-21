@@ -22,9 +22,12 @@ jobs:
       uses: microsoft/setup-msbuild@v1.0.2
     - name: Display dotnet version 
       run: dotnet --version
-    - name: Deploy via PS
+    - name: PS script ProgramFiles
       run: |
-        .\ConsoleAppNew\ConsoleApp1\DeployScript.ps1
+           ${env:ProgramFiles(x86)}
+ #   - name: Deploy via PS
+ #     run: |
+ #       .\ConsoleAppNew\ConsoleApp1\DeployScript.ps1
     - name: PS script whoami
       run: |
         whoami
