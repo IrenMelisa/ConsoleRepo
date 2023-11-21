@@ -1,6 +1,6 @@
 $application = "ConsoleApp1"
 $msBuildExecutable = "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\MSBuild\Current\Bin\MSBuild.exe"
-$projectsDirectory = "C:\actions-runner\_work\ConsoleRepo\ConsoleRepo\ConsoleAppNew\ConsoleApp1"
+$projectsDirectory = "$env:GITHUB_WORKSPACE\ConsoleAppNew\ConsoleApp1"
 $ApplicationStartDate = Get-Date
 $configuration = "Debug"
 $applicationLog = "c:\tmp\logTMP"
