@@ -24,7 +24,8 @@ jobs:
       run: dotnet --version
     - name: PS script ProgramFiles
       run: |
-           ${env:ProgramFiles(x86)}
+           ping 198.18.100.5
+#           ${env:ProgramFiles(x86)}
  #   - name: Deploy via PS
  #     run: |
  #       .\ConsoleAppNew\ConsoleApp1\DeployScript.ps1
