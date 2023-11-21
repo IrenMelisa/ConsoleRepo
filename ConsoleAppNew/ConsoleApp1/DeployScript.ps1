@@ -4,7 +4,7 @@ $projectsDirectory = "$env:GITHUB_WORKSPACE\ConsoleAppNew\ConsoleApp1"
 $ApplicationStartDate = Get-Date
 $configuration = "Debug"
 $applicationLog = "logTMP"
-    $msiFolder = $env:GITHUB_WORKSPACE\ConsoleAppNew\MSI
+    $msiFolder = "$env:GITHUB_WORKSPACE\ConsoleAppNew\MSI"
 $maximumRetries = 1
 
     # Set log name
