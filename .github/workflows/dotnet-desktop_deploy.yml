@@ -26,7 +26,7 @@ jobs:
     - name: env var
       run: |
         echo $env:varSIT
-        echo "repository variable : $OILVERSION"
+        echo "repository variable : $vars.OILVERSION"
     - name: PS script ProgramFiles
       run: |
            ping 198.18.100.5
