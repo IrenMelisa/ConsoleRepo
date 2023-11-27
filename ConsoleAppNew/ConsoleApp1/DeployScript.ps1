@@ -13,7 +13,7 @@ $applicationLog = "logTMP"
     $msiPath = "$msiFolder\Middleware.VFDE.I01-1.0.0.0.msi"
 
 Write-Host "envs: $env:GITHUB_WORKSPACE"
-$ComputerName = "dea065yw.eito-dublin.local"
+$ComputerName = "dea059yw.eito-dublin.local"
 $DriveLetter = "D"
 $Path = "IRA"
 New-Item -Path \\$ComputerName\$DriveLetter$\$Path -type directory -Force 
