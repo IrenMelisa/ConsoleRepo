@@ -10,6 +10,7 @@ jobs:
   build:
 
     runs-on: self-hosted
+    environment: SIT
     env: 
       varSIT: "test"
     steps:
@@ -25,7 +26,7 @@ jobs:
       run: dotnet --version
     - name: env var
       run: |
-        echo $env:varSIT
+        echo "local jobs variable $env:varSIT"
         echo "repository variable : ${{ vars.OILVERSION }}"
     - name: PS script ProgramFiles
       run: |
