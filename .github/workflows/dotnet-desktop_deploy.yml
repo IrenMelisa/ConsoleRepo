@@ -5,7 +5,9 @@ name: .NET
 
 on:
   push:
-    branches: [ "main" ] 
+  paths:
+    - "*"
+  branches: [ "main" ] 
 jobs: 
   build:
 
