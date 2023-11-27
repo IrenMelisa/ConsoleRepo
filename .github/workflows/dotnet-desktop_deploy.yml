@@ -11,7 +11,7 @@ jobs:
 
     runs-on: self-hosted
     env: 
-      SIT: "test"
+      varSIT: "test"
     steps:
     - uses: actions/checkout@v3
     - name: Setup .NET
@@ -25,8 +25,8 @@ jobs:
       run: dotnet --version
     - name: env var
       run: |
-        echo $env:SIT
-        echo $env:OILVERSION
+        echo $env:varSIT
+        echo "repository variable : ${{ vars.OILVERSION}}
     - name: PS script ProgramFiles
       run: |
            ping 198.18.100.5
