@@ -13,10 +13,14 @@ $applicationLog = "logTMP"
     $msiPath = "$msiFolder\Middleware.VFDE.I01-1.0.0.0.msi"
 
 Write-Host "envs: $env:GITHUB_WORKSPACE"
-	
+$ComputerName = "dea065yw.eito-dublin.local"
+$DriveLetter = "D"
+$Path = "IRA"
+New-Item -Path \\$ComputerName\$DriveLetter$\$Path -type directory -Force 
+
 # Install application
 #  Start-Process -FilePath "msiexec" -ArgumentList "/i ""$msiPath"" /passive /log ""$logFileName"" INSTALLDIR=""${env:ProgramFiles(x86)}\$applicationName\1.0""" -Wait -Passthru | Out-Null
-Invoke-Command -ComputerName dea059yw.eito-dublin.local -ScriptBlock { 
-New-Item "D:\IRA" -ItemType Directory
-}
+#Invoke-Command -ComputerName dea059yw.eito-dublin.local -ScriptBlock { 
+#New-Item "D:\IRA" -ItemType Directory
+#}
 Write-Host "OUT"
