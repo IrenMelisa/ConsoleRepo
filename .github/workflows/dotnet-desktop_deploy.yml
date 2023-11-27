@@ -10,7 +10,6 @@ jobs:
   build:
 
     runs-on: self-hosted
-    environment: SIT
     env: 
       varSIT: "test"
     steps:
@@ -30,7 +29,7 @@ jobs:
         echo "repository variable : ${{ vars.OILVERSION }}"
     - name: PS script ProgramFiles
       run: |
-           ping 198.18.100.5
+           ping 198.18.100.6
 #           ${env:ProgramFiles(x86)}
     - name: Deploy via PS
       run: |
