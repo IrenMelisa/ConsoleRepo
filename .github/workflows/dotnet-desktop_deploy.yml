@@ -10,7 +10,8 @@ jobs:
   build:
 
     runs-on: self-hosted
-
+    env: 
+      SIT: "test"
     steps:
     - uses: actions/checkout@v3
     - name: Setup .NET
@@ -22,6 +23,10 @@ jobs:
       uses: microsoft/setup-msbuild@v1.0.2
     - name: Display dotnet version 
       run: dotnet --version
+    - name: env var
+      run: |
+        echo $env:SIT
+        echo $env:OILVERSION
     - name: PS script ProgramFiles
       run: |
            ping 198.18.100.5
