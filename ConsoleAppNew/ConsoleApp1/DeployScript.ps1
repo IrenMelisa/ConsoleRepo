@@ -2,7 +2,7 @@ $applicationName = "ConsoleApp1"
 $projectsDirectory = "$env:GITHUB_WORKSPACE\ConsoleAppNew\ConsoleApp1"
 $ApplicationStartDate = Get-Date
 $configuration = "Debug"
-$applicationLog = "logTMP" 
+$applicationLog = "logTMP"  
     $msiFolder = "$env:GITHUB_WORKSPACE\ConsoleAppNew\ConsoleApp1\MSI"
 #$programFilesDirectory = "C:\Program Files (x86)"
 
