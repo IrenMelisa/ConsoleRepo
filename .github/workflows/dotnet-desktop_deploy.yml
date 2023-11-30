@@ -4,10 +4,18 @@
 name: .NET
 
 on:
-  push:
-    branches: [ "main" ] 
-    paths:
-    - '**.ps1'
+#  push:
+#    branches: [ "main" ] 
+#    paths:
+#    - '**.ps1'
+ workflow_dispatch:
+    inputs:
+      build_id:
+        required: true
+        type: string
+      deploy_target:
+        required: true
+        type: string
 
 jobs: 
   build:
