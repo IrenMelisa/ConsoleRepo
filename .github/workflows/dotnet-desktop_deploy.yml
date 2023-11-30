@@ -17,6 +17,19 @@ on:
         required: true
         type: string
         default: '23.11.28.08201'
+      name:
+        type: choice
+        description: Test choice button
+        options: 
+        - yes
+        - no
+      message:
+        required: true
+      use-emoji:
+        type: boolean
+        description: Include 🎉🤣 emojis        
+      environment:
+        type: environment
 
 jobs: 
   build:
