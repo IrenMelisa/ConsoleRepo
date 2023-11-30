@@ -10,12 +10,13 @@ on:
 #    - '**.ps1'
  workflow_dispatch:
     inputs:
-      build_id:
+      releaseVersion:
         required: true
         type: string
-      deploy_target:
+      buildVersion:
         required: true
         type: string
+        default: '23.11.28.08201'
 
 jobs: 
   build:
