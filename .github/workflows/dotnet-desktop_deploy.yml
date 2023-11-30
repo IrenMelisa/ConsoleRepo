@@ -17,28 +17,24 @@ on:
         required: true
         type: string
         default: '23.11.28.08201'
-      name:
+      startDepolyment:
         type: choice
-        description: Test choice button
+        description: start Deploy immediately
         options: 
         - yes
         - no
-      message:
-        required: true
-      use-emoji:
-        type: boolean
-        description: Include 🎉🤣 emojis        
       environment:
         type: environment
 
 jobs: 
-  build:
+  deploy:
 
     runs-on: self-hosted
     environment: SIT
     env: 
       varSIT: "test"
     steps:
+    
     - uses: actions/checkout@v3
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
@@ -53,6 +49,8 @@ jobs:
       run: |
         echo "local jobs variable $env:varSIT"
         echo "repository variable : ${{ vars.OILVERSION }}"
+    - name: Get inputs
+      run: echo "${{ github.event.inputs.startDepolyment }}${{ github.event.inputs.buildVersion}}"
     - name: PS script ProgramFiles
       run: |
            ping 198.18.100.6
