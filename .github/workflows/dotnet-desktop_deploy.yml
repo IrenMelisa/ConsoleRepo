@@ -28,8 +28,9 @@ on:
 
 jobs: 
   deploy:
-
     runs-on: self-hosted
+    outputs:
+      output1: ${{ steps.stepOutput.outputs.test }}
     environment: SIT
     env: 
       varSIT: "test"
@@ -51,16 +52,21 @@ jobs:
         echo "repository variable : ${{ vars.OILVERSION }}"
     - name: Get inputs
       run: echo "${{ github.event.inputs.startDepolyment }}${{ github.event.inputs.buildVersion}}"
+
+    - name: set output
+    - id: stepOutput
+      run: echo "test=hello" >> "$GITHUB_OUTPUT"
+        
     - name: PS script ProgramFiles
       run: |
            ping 198.18.100.6
 #           ${env:ProgramFiles(x86)}
-    - name: Deploy via PS
-      id  : deployStep
-      run: |
-           .\ConsoleAppNew\ConsoleApp1\DeployScript.ps1
+#    - name: Deploy via PS
+#      id  : deployStep
+#      run: |
+#           .\ConsoleAppNew\ConsoleApp1\DeployScript.ps1
     - name: PS script whoami
       run: |
         whoami
-        echo ${{ steps.deployStep.outputs.random_number }}
+        echo ${ steps.stepOutput.outputs.test }
         echo $env:GITHUB_WORKSPACE
