@@ -52,7 +52,7 @@ jobs:
       run: echo "${{ github.event.inputs.startDepolyment }}${{ github.event.inputs.buildVersion}}"
 
     - name: set output
-    - id: stepOutput
+      id: stepOutput
       run: echo "test=hello" >> "$GITHUB_OUTPUT"
         
     - name: PS script ProgramFiles
