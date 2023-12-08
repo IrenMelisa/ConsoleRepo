@@ -56,8 +56,9 @@ jobs:
            ping 198.18.100.6
 #           ${env:ProgramFiles(x86)}
     - name: Deploy via PS
+      id  : deployStep
       run: |
-        .\ConsoleAppNew\ConsoleApp1\DeployScript.ps1
+        echo "psresult = .\ConsoleAppNew\ConsoleApp1\DeployScript.ps1" >> $GITHUB_OUTPUT
     - name: PS script whoami
       run: |
         whoami
