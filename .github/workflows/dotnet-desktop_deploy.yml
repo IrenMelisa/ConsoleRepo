@@ -57,7 +57,7 @@ jobs:
 
     - name: Generate output
       id: color-selector
-      run: echo "SELECTED_COLOR=green" >> "$GITHUB_OUTPUT"
+      run: echo "SELECTED_COLOR=green" >> $env:GITHUB_OUTPUT
     - name: Pass or fail
       env:
           SELECTED_COLOR: ${{ steps.color-selector.outputs.SELECTED_COLOR }}   
