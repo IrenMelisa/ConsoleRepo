@@ -58,6 +58,16 @@ jobs:
       env:
           SELECTED_COLOR: ${{ steps.color-selector.outputs.SELECTED_COLOR }}   
       run: echo "The selected color is $env:SELECTED_COLOR"
+
+    - name: Falt
+      id  : faultstep
+      run: |
+           .\ConsoleAppNew\ConsoleApp1\faultfile.ps1
+    - name: check faultcode
+      env:
+          FAULT_CODE: ${{ steps.faultstep.outputs.ERRCODE }}   
+      run: echo "The error code is $env:FAULT_CODE"
+
     - name: PS script ProgramFiles
       run: |
            ping 198.18.100.6
