@@ -58,7 +58,7 @@ jobs:
     - name: Deploy via PS
       id  : deployStep
       run: |
-        echo "psresult = .\ConsoleAppNew\ConsoleApp1\DeployScript.ps1" >> $GITHUB_OUTPUT
+           .\ConsoleAppNew\ConsoleApp1\DeployScript.ps1" >> $GITHUB_OUTPUT
     - name: PS script whoami
       run: |
         whoami
