@@ -58,7 +58,7 @@ jobs:
     - name: Deploy via PS
       id  : deployStep
       run: |
-           .\ConsoleAppNew\ConsoleApp1\DeployScript.ps1"
+           .\ConsoleAppNew\ConsoleApp1\DeployScript.ps1
     - name: PS script whoami
       run: |
         whoami
