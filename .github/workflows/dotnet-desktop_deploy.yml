@@ -29,6 +29,8 @@ on:
 jobs: 
   deploy:
     runs-on: self-hosted
+    outputs:
+      output1: ${{ steps.stepOutput.outputs.test }}
     environment: SIT
     env: 
       varSIT: "test"
