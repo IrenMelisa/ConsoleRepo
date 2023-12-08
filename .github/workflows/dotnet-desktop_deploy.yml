@@ -29,10 +29,6 @@ on:
 jobs: 
   deploy:
     runs-on: self-hosted
-#    outputs:
-#      testvar: 
-#               description: "Random number"
-#               value: "NewTestValue"
     environment: SIT
     env: 
       varSIT: "test"
@@ -58,10 +54,10 @@ jobs:
     - name: Generate output
       id: color-selector
       run: echo "SELECTED_COLOR=green" >> $env:GITHUB_OUTPUT
-    - name: Pass or fail
+    - name: check output
       env:
           SELECTED_COLOR: ${{ steps.color-selector.outputs.SELECTED_COLOR }}   
-      run: echo "The selected color is $SELECTED_COLOR"
+      run: echo "The selected color is ${SELECTED_COLOR}"
     - name: PS script ProgramFiles
       run: |
            ping 198.18.100.6
@@ -73,5 +69,4 @@ jobs:
     - name: PS script whoami
       run: |
         whoami
-        echo echo random-number ${{ steps.stepOutput.outputs.testvar }}
         echo $env:GITHUB_WORKSPACE
