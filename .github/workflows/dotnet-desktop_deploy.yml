@@ -29,8 +29,6 @@ on:
 jobs: 
   deploy:
     runs-on: self-hosted
-#    outputs:
-#      output1: ${{ steps.stepOutput.outputs.test }}
     environment: SIT
     env: 
       varSIT: "test"
@@ -53,7 +51,7 @@ jobs:
     - name: Get inputs
       run: echo "${{ github.event.inputs.startDepolyment }}${{ github.event.inputs.buildVersion}}"
 
-    - name: set output
+#    - name: set output
 #    - id: stepOutput
 #      run: echo "test=hello" >> "$GITHUB_OUTPUT"
         
