@@ -68,6 +68,16 @@ jobs:
           FAULT_CODE: ${{ steps.faultstep.outputs.ERRCODE }}   
       run: echo "The error code is $env:FAULT_CODE"
 
+
+    - name: Falt2
+      id  : faultstep2
+      run: |
+           .\ConsoleAppNew\ConsoleApp1\faultrewrite.ps1
+    - name: check faultcode rewrite
+      env:
+          FAULT_CODE: ${{ steps.faultstep.outputs.ERRCODE }}   
+      run: echo "The NEW error code is $env:FAULT_CODE"
+
     - name: PS script ProgramFiles
       run: |
            ping 198.18.100.6
