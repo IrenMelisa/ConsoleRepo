@@ -58,8 +58,9 @@ jobs:
     - name: Deploy via PS
       id  : deployStep
       run: |
-           .\ConsoleAppNew\ConsoleApp1\DeployScript.ps1" >> $GITHUB_OUTPUT
+           .\ConsoleAppNew\ConsoleApp1\DeployScript.ps1"
     - name: PS script whoami
       run: |
         whoami
+        echo ${{ steps.deployStep.outputs.random_number }}
         echo $env:GITHUB_WORKSPACE
