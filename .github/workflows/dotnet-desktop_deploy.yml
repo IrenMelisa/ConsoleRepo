@@ -29,8 +29,10 @@ on:
 jobs: 
   deploy:
     runs-on: self-hosted
-    outputs:
-      testvar: ${{ steps.stepOutput.outputs.testvar }}
+#    outputs:
+#      testvar: 
+#               description: "Random number"
+#               value: "NewTestValue"
     environment: SIT
     env: 
       varSIT: "test"
@@ -53,10 +55,12 @@ jobs:
     - name: Get inputs
       run: echo "${{ github.event.inputs.startDepolyment }}${{ github.event.inputs.buildVersion}}"
 
-    - name: set output
-      id: stepOutput
-      run: echo "testvar=hello" >> $GITHUB_OUTPUT
-        
+    - name: Generate 0 or 1
+      id: generate_number
+      run:  echo "random_number=$(($RANDOM % 2))" >> $GITHUB_OUTPUT
+    - name: Pass or fail
+      run: |
+          if [[ ${{ steps.generate_number.outputs.random_number }} == 0 ]]; then exit 0; else exit 1; fi        
     - name: PS script ProgramFiles
       run: |
            ping 198.18.100.6
