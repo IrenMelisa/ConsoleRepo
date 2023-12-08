@@ -75,7 +75,7 @@ jobs:
            .\ConsoleAppNew\ConsoleApp1\faultrewrite.ps1
     - name: check faultcode rewrite
       env:
-          FAULT_CODE: ${{ steps.faultstep.outputs.ERRCODE }}   
+          FAULT_CODE: ${{ steps.faultstep2.outputs.ERRCODE }}   
       run: echo "The NEW error code is $env:FAULT_CODE"
 
     - name: PS script ProgramFiles
