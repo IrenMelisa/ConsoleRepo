@@ -51,9 +51,9 @@ jobs:
     - name: Get inputs
       run: echo "${{ github.event.inputs.startDepolyment }}${{ github.event.inputs.buildVersion}}"
 
-#    - name: set output
-#    - id: stepOutput
-#      run: echo "test=hello" >> "$GITHUB_OUTPUT"
+    - name: set output
+    - id: stepOutput
+      run: echo "test=hello" >> "$GITHUB_OUTPUT"
         
     - name: PS script ProgramFiles
       run: |
@@ -66,5 +66,5 @@ jobs:
     - name: PS script whoami
       run: |
         whoami
-#        echo ${ steps.stepOutput.outputs.test }
+        echo ${ steps.stepOutput.outputs.test }
 #        echo $env:GITHUB_WORKSPACE
