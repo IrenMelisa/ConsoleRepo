@@ -30,7 +30,7 @@ jobs:
   deploy:
     runs-on: self-hosted
     outputs:
-      output1: ${{ steps.stepOutput.outputs.testvar }}
+      testvar: ${{ steps.stepOutput.outputs.testvar }}
     environment: SIT
     env: 
       varSIT: "test"
@@ -55,8 +55,7 @@ jobs:
 
     - name: set output
       id: stepOutput
-      run: |
-           echo "testvar=hello" >> "$GITHUB_OUTPUT"
+      run: echo "testvar=hello" >> $GITHUB_OUTPUT
         
     - name: PS script ProgramFiles
       run: |
@@ -69,5 +68,5 @@ jobs:
     - name: PS script whoami
       run: |
         whoami
-        echo ${ steps.stepOutput.outputs.test }
+        echo echo random-number ${{ steps.stepOutput.outputs.testvar }}
         echo $env:GITHUB_WORKSPACE
