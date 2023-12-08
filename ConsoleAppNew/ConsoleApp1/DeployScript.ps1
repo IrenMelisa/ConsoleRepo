@@ -12,6 +12,8 @@ $applicationLog = "logTMP"
     # Set installer path
     $msiPath = "$msiFolder\Middleware.VFDE.I01-1.0.0.0.msi"
 
+throw "Bad thing happened"
+
 Write-Host "envs: $env:GITHUB_WORKSPACE"
 $ComputerName = "dea059yw.eito-dublin.local"
 $DriveLetter = "D"
