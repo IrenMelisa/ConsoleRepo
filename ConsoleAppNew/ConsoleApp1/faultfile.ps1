@@ -4,8 +4,7 @@ Write-Host "do not play"
 }
 catch
 { Write-Host "catching errors"
-  echo "random_number=$(($RANDOM % 2))" >> $GITHUB_OUTPUT
-  $a = "Hello, World"
+  echo "errcode=55" >> $env:GITHUB_OUTPUT
   return  $GITHUB_OUTPUT
   Write-Host "do not play1"
   
