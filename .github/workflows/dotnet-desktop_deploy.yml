@@ -55,7 +55,7 @@ jobs:
       id: color-selector
       run: echo "SELECTED_COLOR=green" >> $env:GITHUB_OUTPUT
     - name: check output
-      if: ${{ steps.color-selector.outputs.SELECTED_COLOR  == 'green'}} 
+      if: ${{ steps.color-selector.outputs.SELECTED_COLOR  == 'red'}} 
       env:
           SELECTED_COLOR: ${{ steps.color-selector.outputs.SELECTED_COLOR }}   
       run: echo "The selected color is $env:SELECTED_COLOR"
