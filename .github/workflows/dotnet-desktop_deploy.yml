@@ -55,13 +55,14 @@ jobs:
       id: color-selector
       run: echo "SELECTED_COLOR=green" >> $env:GITHUB_OUTPUT
     - name: check output
+      if: ${{ steps.color-selector.outputs.SELECTED_COLOR  == 'green'}} 
       env:
           SELECTED_COLOR: ${{ steps.color-selector.outputs.SELECTED_COLOR }}   
       run: echo "The selected color is $env:SELECTED_COLOR"
 
-    - name: ifOutputeq
-      run: |
-            if ([ "${{ steps.color-selector.outputs.SELECTED_COLOR }}"  -eq "green" ]) {exit 0;} fi
+#    - name: ifOutputeq
+#      run: |
+#            if ([ "${{ steps.color-selector.outputs.SELECTED_COLOR }}"  -eq "green" ]) {exit 0;} fi
     - name: Falt
       id  : faultstep
       run: |
