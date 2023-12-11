@@ -61,7 +61,7 @@ jobs:
 
     - name: ifOutputeq
       run: |
-            if ([ "${{ steps.color-selector.outputs.SELECTED_COLOR }}"  == "green" ]) then exit 0; else exit 1; fi
+            if ([ "${{ steps.color-selector.outputs.SELECTED_COLOR }}"  == "green" ]) then {exit 0;} else {exit 1;} fi
     - name: Falt
       id  : faultstep
       run: |
