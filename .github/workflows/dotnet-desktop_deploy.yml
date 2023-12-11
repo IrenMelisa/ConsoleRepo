@@ -57,10 +57,11 @@ jobs:
     - name: check output
       env:
           SELECTED_COLOR: ${{ steps.color-selector.outputs.SELECTED_COLOR }}   
-      run: |
-            if [[ ${{ $env:SELECTED_COLOR }} == "green" ]]; then exit 0; else exit 1; fi; 
-            echo "The selected color is $env:SELECTED_COLOR"
+      run: echo "The selected color is $env:SELECTED_COLOR"
 
+    - name: ifOutputeq
+      run: |
+            if [[ ${{ steps.color-selector.outputs.SELECTED_COLOR }}  == "green" ]]; then exit 0; else exit 1; fi; 
     - name: Falt
       id  : faultstep
       run: |
